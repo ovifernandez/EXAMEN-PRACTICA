@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}Moto{% endblock title %}
+
+{% block content %}
+
+<p>La moto {{moto}} es de la marca </p>
+{% for marca in moto.marcas.all %}
+<a class="list-group-item list-group-item-action" href="{% url 'marca_detail' marca.id %}">{{ marca }}</a>
+{% endfor %}
+
+{% endblock content %}

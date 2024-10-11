@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Motos disponibles{% endblock title %}
+{% block content %}
+
+{% for moto in  motos %}
+<a class="list-group-item list-group-item-action" href="{% url 'moto_detail' moto.id %}">
+{{moto}}
+</a>
+{% endfor %}
+
+{% endblock content %}
+

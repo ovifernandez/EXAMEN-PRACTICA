@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-e##5@#9d!u_=%e($yr6ho7@829ctkst-o-lvr-0ia=)04g7nlb
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['bbdavid.azurewebsites.net', '127.0.0.1']
 
 
 # Application definition
@@ -38,7 +38,6 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "oviapp.apps.OviappConfig",
-    
 ]
 
 MIDDLEWARE = [

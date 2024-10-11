@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+
+{% block title %}Ovi app - Marca {% endblock title %}
+{% block content %}
+<p>La marca {{marca}} tiene estas motos disponibles: </p>
+{% for moto in marca.motos.all %}
+<a class="list-group-item list-group-item-action" href="{% url 'moto_detail' moto.id %}">{{ moto }}</a>
+{% endfor %}
+{% endblock content %}
