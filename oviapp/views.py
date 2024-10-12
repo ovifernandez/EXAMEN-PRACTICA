@@ -11,8 +11,8 @@ def about(request):
     return render(request, 'about.html')
 
 def motos(request):
-    all_motos = models.Moto.objects.all(),
-    return render(request, 'motos.html')
+    all_motos = models.Moto.objects.all()
+    return render(request, 'motos.html', {'motos': all_motos})
 
 class MotoDetailView(generic.DetailView):
     template_name = 'moto_detail.html'

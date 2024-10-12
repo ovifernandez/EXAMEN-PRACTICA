@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 # Create your models here.
 class Moto(models.Model):
@@ -19,6 +20,11 @@ class Moto(models.Model):
         blank=False,)
     
     precio = models.IntegerField()
+    def __str__(self):
+        return self.name
+    
+    def get_absolute_url(self):
+        return reverse("moto_detail", kwargs={"pk": self.pk})
 
 class Marca(models.Model):
     name = models.CharField(
@@ -40,4 +46,10 @@ class Marca(models.Model):
         Moto,
         related_name='marcas'
     )
+    def __str__(self):
+        return self.name
+
+    def get_absolute_url(self):
+        return reverse("marca_detail", kwargs={"pk": self.pk})
+    
 
